@@ -1,0 +1,317 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(0, 0, 0);
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Serif', sans-serif;
+}
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width: 100%;
+    padding: 0px;
+    position: fixed; /*debe de ser fixed para que cuano se escrolee quede siempre arriba*/
+    z-index: 999;
+}
+
+header a{ /* esto le da estilo a la imagen */
+    width: 20%;
+    margin-left: 50px;
+ }
+
+ .img_header{
+    width: 100%;
+    height: auto;
+}
+
+.menu{ /* este menu hace que todo pueda ser ordenado en flex la nav y el login */
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav{ /*dentro de la seccion del header hacemos que conserven el % */
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cintillo {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: #615d5d;
+}
+
+.login{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.datoslog{
+    border: none;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.formu{
+    border-radius: 40px;
+    width: 30%;
+    height: 30px;
+    border-color: rgb(170, 97, 212);
+}
+
+.entrar{
+    padding: 0px;
+    width: 80px;
+    height: 30px;
+    border-radius: 40px;
+    font-size: 16px;
+    border-color: rgb(170, 97, 212);
+    background-image:  linear-gradient(rgba(0, 122, 175, 0.979), rgba(74, 25, 102, 0.973));
+    color: white;
+    margin-left: 10px;
+}
+.menu label{
+    font-size: 12px;
+}
+
+.inicio{
+    background-image: url("../img/unnamed.jpg");
+    background-size: 100% 100%; 
+    width: 100%;
+    height: 850px;
+    background-size: 100% 100%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.imglogo{
+    width: 30%;
+    margin: 40px auto;
+}
+
+.img_central{
+width: 100%;
+height: auto;
+}
+
+.texhome{
+    background-color:  rgba(89, 3, 139, 0.623);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    
+h1{
+    color: white;
+    font-size:45px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+h3{
+    font-size: 35px;
+    color: rgb(11, 245, 11);
+    font-weight: 600;
+    margin: 0px
+}
+
+#faq{
+    margin-top: 60px;
+    background-image: url("../img/img2.jpg"); /*porque si tiene un alto y un ancho no se pone la foto completa*/
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    margin-right: 50px;
+}
+
+.serbd{
+    display: flex;
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.658);
+    color: white;
+    margin: 60px;
+    flex-direction: column;
+
+}
+
+.serbd h4{
+font-size: 30px;
+text-align: end;
+margin: 30px;
+}
+
+.serbd p{
+    font-size: 20px;
+    text-align: end;
+    margin: 30px;
+}
+
+.icono{
+    font-size: 80px;
+    margin: 20px 0px 0px 30px;
+    width: 30%;
+}
+
+.solonecesita{
+    background-image: url("../img/img3.jpg");
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.porqbc{
+    background-image: url("../img/img4.jpg");
+    background-size: 100% 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#registro{
+    background-image: url("../img/final.jpg");
+    margin-top: 20px;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 850px;
+    justify-content: center;
+    align-items: center;
+}
+
+.registre{
+    background-color: rgba(137, 43, 226, 0.644);
+    color: white;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.datos{
+    width: 80%;
+    border: none;
+
+}
+
+#registro  p{
+    font-size: 30px;
+}
+
+.datos input{
+    width: 100%;
+    height: 25px;
+    border-radius: 40px;
+    margin: 10px auto;
+}
+
+.sexo{
+    border-radius: 40px;
+    border: none;
+    text-align: center;
+}
+
+.regi{
+    width: 30%;
+    height: 30px;
+    border-radius: 40px;
+    font-size: 16px; 
+    background-image:  linear-gradient(rgba(0, 122, 175, 0.979), rgba(74, 25, 102, 0.973));
+    color: white;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 992px){
+    /*.container{
+        max-width: 960px;
+    }*/
+    .imglogo{
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px){
+   /* .container{
+        max-width: 720px;
+    } */
+    header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    h1{
+        font-size: 25px;
+    }
+    h3{
+        font-size: 15px;
+    }
+    .serbd {
+        width: 100%;
+    }
+    .registre{
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 576px){
+   /* .container{
+        max-width: 540px;
+    } */
+    header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .menu{
+        justify-content: center;
+        flex-direction: column
+    }
+    .login{
+        width: 100%;
+    }
+
+    .registre{
+        width: 100%;
+    }
+}

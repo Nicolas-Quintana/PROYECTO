@@ -1,0 +1,2 @@
+{"nombre":"rosangela","apellido":"ingallina","email":"rosangela.ingallina@gmail.com","password":"$2y$10$M6fMoR8pa6s503lOv2Tcq.zSBjlYHvsAiCxIh7jJZvS5GBGhh0fii","sexo":"F","fotoPerfil":"5b9aafd68f582.png"}
+{"nombre":"edinson","apellido":"apolinar","email":"edinson@icloud.com","password":"$2y$10$TYghhlmHX1UR3OAgzSoPuOFI88JusBi7wRr4gHx62ZDSXP7Jjg5Me","sexo":"M","fotoPerfil":"5b9ab043eaf74.png"}
