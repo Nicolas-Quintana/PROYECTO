@@ -1,0 +1,519 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	font-size: 12pt;
+	text-decoration: none;
+	text-decoration: none;
+	color: #000;
+}
+
+@font-face {
+    font-family: 'Raleway'; /*a name to be used later*/
+    src: url('../fonts/Raleway-Regular.ttf'); /*URL to font*/
+}
+
+body{
+	/*background: url(../img/weather.png);*/
+	font-family: 'Raleway';
+	line-height: 17pt;
+	background-color: #E5E9EB;
+}
+
+footer{
+	text-align: right;
+	font-size: 12pt;
+	color: #6D6D6D;
+}
+
+h1{
+	color: #00A3A5;
+	font-size: 14pt;
+	border-bottom: 1px solid #A7D8D9;
+	margin-bottom: 3px;
+}
+
+button.general, button.default{
+	padding: 4px;
+	font-family: 'Raleway';
+	background: #0074B1;
+	font-weight: bold;
+	border-radius: 3px;
+	border: 1px solid #0082D9;
+	color: white;
+	margin:5px;
+	cursor: pointer;
+	font-size: 10pt;
+}
+
+button.general:hover{
+	background: #0082D9; 
+}
+
+button.default{
+	background: #C5C5C5;
+	color: #000;
+	border: 1px solid #7B8586;
+}
+
+button.default:hover{
+	background: #D9D9D9;
+}
+
+.container{
+	width: 1000px;
+	margin: auto;
+	margin-top:80px;
+}
+
+
+/* ======== principal menu ========*/
+
+header{
+	background: #003556;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	z-index: 1000;
+}
+
+header nav{
+	margin: auto;
+	height: 60px;
+	width: 1000px;
+}
+
+header ul{
+	height: 60px;
+}
+header nav li{
+	list-style: none;
+	color: white;
+	margin-right: 10px;
+	height: 50px;
+	float: left;
+}
+
+header nav .menu_option{
+	margin-left: 300px;
+	padding-top: 15px;
+}
+
+header nav .option a{
+	color: #B0CCD8;
+	text-decoration: none;
+}
+
+header nav a:hover{
+	color:#fff;
+}
+
+header nav .option{
+	background: #001B2B;
+	border: 2px solid #104361;
+	border-bottom: 2px solid #000;
+	padding: 5px;
+	border-radius: 8px 8px 0 0;
+	text-decoration: none;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+
+header form {
+	margin-top: 12px;	
+	border-radius: 100px;
+	background: white;
+	padding-right: 5px;
+}
+
+header input{
+	height: 30px;
+	background: transparent;
+	border:0;
+	padding-left: 15px;
+	min-width: 300px; 
+}
+
+header button{
+	height: 30px;
+	background: transparent;
+	border:0;
+}
+
+header .menu-avatar{
+	display: inline-block;
+	margin: 5px;
+	border-radius: 100px;
+	width: 45px;
+	height: 45px;
+	background-color: #E1E1E1;
+}
+
+/* ================= Contenido ================= */
+
+aside, article{
+	float: left;
+}
+
+aside{
+	width: 300px;
+	float: right;
+}
+
+article{
+	width: 680px;
+	padding: 10px;
+	padding-top: 0px;
+}
+
+section{
+	margin-bottom: 25px;
+	background: white;
+	/*box-shadow: 2px 2px 11px #004F88;*/
+	border:1px solid #A1B1B4;
+	/*height: 128px;*/
+	border-radius: 8px;
+}
+
+
+section .avatar{
+	border-bottom: 1px solid #D0D0D0;
+}
+
+section .status{
+	padding: 20px;
+}
+
+section .avatar img{
+	border:2px solid white;
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+.background_image{
+	padding: 10px;
+	float: left;
+}
+
+.action{
+	float: left;
+	padding: 10px;
+
+}
+
+section .action h2 a{
+	font-size: 12pt;
+	color: #006673;
+}
+
+section .action h3 a{
+	font-size: 10pt;
+	color: #B4B4B4;
+}
+
+aside div.user_information{
+	background: white;
+	padding: 5px;
+	margin-bottom: 20px;
+	/*box-shadow: 2px 2px 11px #004F88;*/
+	border:1px solid #A1B1B4;
+	border-radius: 5px;
+}
+
+aside div.avatar{
+	float: left;
+}
+
+aside .aside-avatar{
+	width: 100px;
+	height: 100px;
+	display: block;
+	background-color: #E1E1E1; 
+}
+
+div.information{
+	float: left;
+	margin-left: 10px;
+}
+
+#user_nick, #user_name{
+	font-size: 14pt;
+	color: #00A3A5;
+	border: none;
+}
+
+#user_nick{
+	font-weight: bolder;
+}
+
+#user_name{
+	font-size: 11pt;
+	color:gray;
+	font-weight: normal;
+	margin-top: -5px;
+}
+
+.user_information p{
+	padding: 20px;
+}
+
+div.stats{
+	text-align: center;
+}
+
+span.rating{
+	color: #00AD90;
+	font-size: 28pt;
+	font-weight: bolder;
+}
+
+span.rating_text{
+	color:gray;
+}
+
+aside nav li{
+	display: block;
+	list-style: none;
+	padding: 10px;
+	border-bottom: 1px solid gray;
+	border-left: 5px solid #00263B;
+	cursor: pointer;
+	margin-bottom:5px;
+
+	background: #0086D5; 
+	color: white;
+}
+
+aside nav li:hover{
+	background: #00B9D5; 
+}
+
+section h1{
+	font-size: 11pt;
+	text-align: center;
+	color: #35CADD;
+	border: none;
+}
+
+.share_buttons{
+	margin-top: 10px;
+	padding-top: 15px;
+	border-top: 1px solid #525252;
+}
+
+.fb, .tw, .g, .ins{
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+}
+
+.fb{
+	background: url(../img/fb.png);
+}
+
+.tw{
+	background: url(../img/twitter.png);
+}
+
+.g{
+	background: url(../img/g.png);
+}
+
+.ins{
+	background: url(../img/instagram.png);
+}
+
+section.writer{
+	text-align: right;
+	min-height: 150px;
+}
+
+section.writer textarea{
+	width: 100%;
+	min-width: 660px;
+	max-width: 660px;
+	border:none;
+	background: transparent;
+	padding: 10px;
+	font-family: 'Raleway';
+	min-height: 111px;
+	max-height: 111px;
+	resize: none;
+}
+
+div.buttons-writer{
+	background: #DFE4E5;
+	border-radius: 0 0 8px 8px;
+}
+
+
+/* ========== profile page ========== */
+
+.banner{
+	width: 1000px;
+	height: 400px;
+	margin-top: 60px;
+	padding-top: 200px;
+	background: url(../img/banner.jpg);
+	background-color: #238BAC;
+}
+
+.banner .user_photo{
+	width: 300px;
+	margin:auto;
+	text-align: center;
+}
+
+.banner .user_photo img{
+	width: 100px;
+	border-radius: 250px;
+	border: 5px solid #FFFFFF;
+}
+
+.user_name, .user_fullname{
+	display: block;
+	font-size: 16pt;
+	color: #001B31;
+	text-shadow: -1px -1px 14px rgba(255, 255, 255, 1);
+}
+
+.profile{
+	margin-top: 10px;
+}
+
+/*=========== modal ==============*/
+div.background_modal{
+	background-color: rgba(0,0,0,.3);
+	bottom: 0;
+	top:0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	position: fixed;
+	z-index: -10;
+	-moz-transition: opacity 1s;
+	-webkit-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	-ms-transition: opacity 1s;
+}
+
+div.background_modal:target{
+	opacity: 1;
+	z-index: 10;
+}
+
+
+div.modal_container{
+	background: rgba(0,75, 105, .5);
+	/*box-shadow: 0px 0px 10px #000;*/
+	border:1px solid #A1B1B4;
+	border-radius: 5px;
+	color: #000;
+	margin: 70px auto;
+	width: 650px;
+	padding: 8px;
+	position: relative;
+}
+
+div.modal_content{
+	overflow: auto;
+	padding: 20px;
+	border-radius: 5px;
+	background: #fff;
+	height: 500px;
+}
+
+div.background_modal .close_button img{
+	float: right;
+	color: #fff;
+	width: 32px;
+}
+
+div.like_tools{
+	padding:5px 0 10px 20px;
+	border-top:1px solid #D5D5D5;
+}
+
+a.like_button, a.dislike_button, a.comments_button{
+	font-size:9pt;
+	color:#0072BE ;
+	margin-right:10px;
+}
+
+a.dislike_button{
+	color: #BE0300 ;
+}
+
+a.comments_button{
+	float:right;
+	margin-right:20px;
+}
+
+/*============= comentarios ==============*/
+
+div.comment{
+	border-top: 1px solid #C7C7C7;
+}
+
+.comment div.image, .comment div.text{
+	float: left;
+}
+
+.comment div.image img{
+	margin: 5px;
+	border-radius: 50%;
+}
+
+.comment div.text{
+	padding: 8px;
+	font-size: 9pt;
+}
+
+div.text a{
+	font-size: 9pt;
+	color: #006D87;
+	font-weight: bold;
+	margin-right: 5px;
+}
+
+div.text input{
+	width: 470px;
+	height: 20px;
+	border:none;
+	font-size: 9pt;
+}
+
+div.user_menu{
+	height:40px;
+	border:1px solid #CCCCCC;
+	width:1000px;
+	margin:auto;
+	background: #fff;
+	font-size: 0px;
+}
+
+div.user_menu a{
+	margin: 0;
+	padding: 8px 20px 5px 20px;
+	display: inline-block;
+	background: #F2F2F2;
+	height: 100%;
+	border-right:1px solid #CCCCCC;
+	font-weight: bold;
+	font-size: 11pt;
+	color: #005166;
+}
+
+div.user_menu a:hover{
+	color: #001E26;
+	background: #FCFCFC;
+}
+
+div.user_menu .active{
+	color: #001E26;
+	background: #FCFCFC;
+}

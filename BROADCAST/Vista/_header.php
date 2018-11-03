@@ -1,16 +1,16 @@
 <?php
 require_once 'Controlador/fileCont.php';
 require_once 'Controlador/loginCont.php';
+require_once 'help.php';
+
 
 if (isset($_POST['emailLog'])) {
-  print_r ($_POST['emailLog']);
   // Verificamos si el usuario ya existe en nuestra base de datos, y de ser así, que la contraseña sea la correcta.
   $verifica = verificaUsuario($_POST['emailLog'], $_POST['passwordLog']);
-  
+
   // Si efectivamente verificamos, guardamos en $_SESSION el usuario que se logueó y redirigimos a la página de bienvenidos.
   if ($verifica) {
       $usuario = traerUsuario($_POST['emailLog']);
-      print_r ($usuario);
       //crearSesion($usuario);
       redirect('Vista/_perfil.php');
   } else {
@@ -48,8 +48,8 @@ if (isset($_POST['emailLog'])) {
         <!--esta seccion será para el login-->
         <form  class= "login" action="" method="post">
           <fieldset class="datoslog">
-            <input class= "formu" type="email" required name="emailLog" placeholder=" E-Mail">
-            <input class= "formu" type="password" required name="passwordLog" placeholder=" Password" >
+            <input class= "formu" type="email" name="emailLog" placeholder=" E-Mail">
+            <input class= "formu" type="password" name="passwordLog" placeholder=" Password" >
             <button class= "entrar" type="submit" name="Login" value="Login">Login</button>
           </fieldset>
           <input type="checkbox" name="remember">

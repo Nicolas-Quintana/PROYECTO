@@ -1,2 +1,3 @@
-{"nombre":"rosangela","apellido":"ingallina","email":"rosangela.ingallina@gmail.com","password":"$2y$10$M6fMoR8pa6s503lOv2Tcq.zSBjlYHvsAiCxIh7jJZvS5GBGhh0fii","sexo":"F","fotoPerfil":"5b9aafd68f582.png"}
-{"nombre":"edinson","apellido":"apolinar","email":"edinson@icloud.com","password":"$2y$10$TYghhlmHX1UR3OAgzSoPuOFI88JusBi7wRr4gHx62ZDSXP7Jjg5Me","sexo":"M","fotoPerfil":"5b9ab043eaf74.png"}
+{"nombre":"edinson","apellido":"apolinara","email":"edinson@icloud.com","password":"$2y$10$aXdKFm7d2xiLJiZzuT0XX.dB0GxUdyN6vc58vqh1Mam6PtPHpidKm","sexo":"M","fotoPerfil":"5bddc36669c54.jpg"}
+{"nombre":"romina","apellido":"ingallina","email":"romina@gmail.com","password":"$2y$10$C0fpPmUzNwhTNsTl.AeMe.Y0YddLzyGqArZb32Di6VQNMO6yO0Ioa","sexo":"F","fotoPerfil":"5bddc497cbd5e.jpg"}
+{"nombre":"edinson","apellido":"apolll","email":"edi@apol.com","password":"$2y$10$5\/RLmPZQfVCr8s4weByzVuEstfTa85Is\/ItvrpG1cdb\/lxkv2Qs2q","sexo":"M","fotoPerfil":"5bddc8ed642ea.jpg"}
