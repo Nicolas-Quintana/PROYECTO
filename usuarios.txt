@@ -1,3 +1,4 @@
 {"nombre":"edinson","apellido":"apolinara","email":"edinson@icloud.com","password":"$2y$10$aXdKFm7d2xiLJiZzuT0XX.dB0GxUdyN6vc58vqh1Mam6PtPHpidKm","sexo":"M","fotoPerfil":"5bddc36669c54.jpg"}
 {"nombre":"romina","apellido":"ingallina","email":"romina@gmail.com","password":"$2y$10$C0fpPmUzNwhTNsTl.AeMe.Y0YddLzyGqArZb32Di6VQNMO6yO0Ioa","sexo":"F","fotoPerfil":"5bddc497cbd5e.jpg"}
 {"nombre":"edinson","apellido":"apolll","email":"edi@apol.com","password":"$2y$10$5\/RLmPZQfVCr8s4weByzVuEstfTa85Is\/ItvrpG1cdb\/lxkv2Qs2q","sexo":"M","fotoPerfil":"5bddc8ed642ea.jpg"}
+{"nombre":"sebastian","apellido":"luna","email":"sebas@compa.com","password":"$2y$10$E.t9KA4JqwP.f5VS2zumj.2vxm1nYiHKFquVUHVCAj.z2C5zgQ44i","sexo":"M","fotoPerfil":"5bddd85bc33b4.jpg"}

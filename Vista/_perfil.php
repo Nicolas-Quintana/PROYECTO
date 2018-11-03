@@ -11,7 +11,7 @@
 		<nav>
 			<ul>
 				<li>
-					<a href="_profile.php"><span class="menu-avatar"></span></a>
+					<a href="_profile.php"><span class="menu-avatar"><img class="menu-avatar-img" src ='../img/perfil/5bddd85bc33b4.jpg'></span></a>
 				</li>
 				<li>
 					<form action="#">
@@ -22,7 +22,7 @@
 					</form>
 				</li>
 				<li class="menu_option option"><a href="_perfil.php">Datos</a></li>
-				<li class="option"><a href="_perfil.php">Perfil</a></li>
+				<li class="option"><a href="_profile.php">Perfil</a></li>
 				<li class="option"><a href="_perfil.php">Configuración</a></li>
 			</ul>
 		</nav>

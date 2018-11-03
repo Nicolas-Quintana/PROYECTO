@@ -21,7 +21,7 @@ if ($_POST){
             $usuario['password'] = password_hash($usuario['password'], PASSWORD_DEFAULT);
             guardarUsuario($usuario);
             //$_SESSION['usuario'] = $usuario;
-            redirect('Vista/_perfil.php');
+            redirect('Vista/_profile.php.php');
       }else{
 
       }
