@@ -1,37 +1,47 @@
 <?php 
-require_once 'Controlador/validationCont.php';
-require_once 'help.php';
-require_once 'Controlador/registroCont.php';
-require_once 'Controlador/fileCont.php';
-
-if ($_POST){
-
-  $usuarioViejo = traerUsuario($_POST['email']);
-
-  if($usuarioViejo=== null){
-
-    $usuario = crearUsuario($_POST['nombre'],$_POST['apellido'], $_POST['email'], $_POST['password'],$_POST['sexo'],$_FILES['fotoPerfil']);
-
-    $errores = validarRegister($usuario);
-
-    if ($errores){
-      echo "<script>alert(error al registar)</script>";
-    }else{
-      if (count($errores) === 0) {
-            $usuario['password'] = password_hash($usuario['password'], PASSWORD_DEFAULT);
-            guardarUsuario($usuario);
-            //$_SESSION['usuario'] = $usuario;
-            redirect('Vista/_profile.php.php');
-      }else{
-
-      }
+require_once 'helpers.php';
+// Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
+if (check()) {
+    redirect('bienvenido.php');
+}
+// En el caso de que recibamos datos por POST y un archivo, registramos al usuario.
+if ($_POST && $_FILES) {
+    // Primero nos fijamos que el usuario no exista en la base de datos, de no existir, nos devuelve null.
+    $usuarioViejo = $db->traerUsuario($_POST['email']);
+    // Si el usuario efectivamente no se encontró, se procede a crear el usuario.
+    if ($usuarioViejo === null) {
+        // Creamos el usuario con los datos de $_POST
+        $usuario = new User($_POST['nombre'],$_POST['apellido'], $_POST['email'], $_POST['password']);
+        $usuario->setFotoPerfil($db->guardarFoto($_FILES['fotoPerfil']));
+        
+        // Validamos los datos del usuario que creamos anteriormente
+        $errores = Validator::validarRegister($usuario);
+        
+        // Si en la validación no hubo errores, hasheamos la contraseña del usuario, lo guardamos en base de datos (json), iniciamos la sesión del mismo y redirigimos hacia la páginas de bienvenido.
+        if (count($errores) === 0) {
+            $usuario->setPassword(password_hash($usuario->getPassword(), PASSWORD_DEFAULT));
+            $db->guardarUsuario($usuario);
+            $_SESSION['usuario'] = $usuario;
+            redirect('_profile.php');
+        }
+    } else {
+        // De haberse encontrado el usuario, devolvemos un error.
+        $errores['email'] = 'El email ya está usado.';
     }
-  }else{
-    // De haberse encontrado el usuario, devolvemos un error.
-    $errores['email'] = 'El email ya está usado.';
-  }
 }
 ?>
+<?php 
+// Mostramos los errores
+if(isset($errores) && count($errores) > 0): ?>
+<div>
+    <ul>
+        <?php foreach ($errores as $value): ?>
+            <li><?= $value ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
 <section id="registro">
       <article class="registre">
       

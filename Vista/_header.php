@@ -1,26 +1,43 @@
-<?php
-require_once 'Controlador/fileCont.php';
-require_once 'Controlador/loginCont.php';
-require_once 'help.php';
+<?php 
+    // Requerimos los archivos necesarios.
+    require_once 'helpers.php';
 
+    // Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
+    if (check()) {
+        redirect('_profile.php');
+    }
 
-if (isset($_POST['emailLog'])) {
-  // Verificamos si el usuario ya existe en nuestra base de datos, y de ser así, que la contraseña sea la correcta.
-  $verifica = verificaUsuario($_POST['emailLog'], $_POST['passwordLog']);
+    
+    if ($_POST) {
+        // Verificamos si el usuario ya existe en nuestra base de datos, y de ser así, que la contraseña sea la correcta.
+        $verifica = Validator::validarLogin($db, $_POST['emailLog'], $_POST['passwordLog']);
+        
+        // Si efectivamente verificamos, guardamos en $_SESSION el usuario que se logueó y redirigimos a la página de bienvenidos.
+        if ($verifica) {
+            $usuario = $db->traerUsuario($_POST['emailLog']);
+            
+            $session->crearSesion($usuario);
 
-  // Si efectivamente verificamos, guardamos en $_SESSION el usuario que se logueó y redirigimos a la página de bienvenidos.
-  if ($verifica) {
-      $usuario = traerUsuario($_POST['emailLog']);
-      //crearSesion($usuario);
-      redirect('Vista/_perfil.php');
-  } else {
-      // De no ser así, guardamos un error en el array de errores
-      $errores['emailLog'] = "Usuario o contraseña incorrecto";
-  }
-}
-
-
+            redirect('_profile.php');
+        } else {
+            // De no ser así, guardamos un error en el array de errores
+            $errores['emailLog'] = "Usuario o contraseña incorrecto";
+        }
+    }
+    
 ?>
+
+<?php
+// Si hay errores, los mostramos.
+if(isset($errores) && count($errores) > 0): ?>
+<div>
+    <ul>
+        <?php foreach ($errores as $value): ?>
+            <li><?= $value ?></li>
+        <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -52,7 +69,7 @@ if (isset($_POST['emailLog'])) {
             <input class= "formu" type="password" name="passwordLog" placeholder=" Password" >
             <button class= "entrar" type="submit" name="Login" value="Login">Login</button>
           </fieldset>
-          <input type="checkbox" name="remember">
+          <input type="checkbox" name="recordar">
           <label for="">Recordar E-Mail</label>
         </form>
       </section>

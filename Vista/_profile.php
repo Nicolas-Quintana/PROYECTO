@@ -1,5 +1,24 @@
+<?php 
+// Iniciamos sesión.
+session_start();
+
+// Requerimos los archivos necesarios.
+require_once 'Controlador/sessionController.php';
+require_once 'help.php';
+
+mantenerSesion();
+
+// Si no estamos logueados, redirigimos a login.php
+if (guest()) {
+    redirect('index.php');
+}
+?>
+
+
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Perfil | Red Social</title>
@@ -7,7 +26,7 @@
 	<script type="text/javascript" src="js/views.js"></script>
 </head>
 <body>
-	<header>
+	<header><h1>Bienvenido <?= user()['nombre'] ?></h1>
 		<nav>
 			<ul>
 				<li>
