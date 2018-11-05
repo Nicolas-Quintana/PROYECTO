@@ -1,13 +1,17 @@
 <?php 
-// Iniciamos sesión.
-session_start();
-
 // Requerimos los archivos necesarios.
-require_once 'Controlador/sessionController.php';
-require_once 'help.php';
-
-mantenerSesion();
-
+require_once 'helpers.php';
+$session->mantenerSesion();
+if ($_POST) {
+    $usuario = $db->modificarDatos();
+    if ($usuario instanceof User) {
+        session_destroy();
+        session_start();
+        $_SESSION['usuario'] = $usuario;
+    } else {
+        dd('ERRORES:', $usuario);
+    }
+}
 // Si no estamos logueados, redirigimos a login.php
 if (guest()) {
     redirect('index.php');

@@ -1,19 +1,21 @@
 <?php 
-require_once 'helpers.php';
+require_once 'help.php';
 // Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
 if (check()) {
-    redirect('bienvenido.php');
+    redirect('_profile.php');
 }
 // En el caso de que recibamos datos por POST y un archivo, registramos al usuario.
 if ($_POST && $_FILES) {
     // Primero nos fijamos que el usuario no exista en la base de datos, de no existir, nos devuelve null.
     $usuarioViejo = $db->traerUsuario($_POST['email']);
+    echo ($usuarioViejo.'edi');
+    
     // Si el usuario efectivamente no se encontró, se procede a crear el usuario.
     if ($usuarioViejo === null) {
         // Creamos el usuario con los datos de $_POST
         $usuario = new User($_POST['nombre'],$_POST['apellido'], $_POST['email'], $_POST['password']);
         $usuario->setFotoPerfil($db->guardarFoto($_FILES['fotoPerfil']));
-        
+        echo ('hola2');
         // Validamos los datos del usuario que creamos anteriormente
         $errores = Validator::validarRegister($usuario);
         
@@ -27,6 +29,7 @@ if ($_POST && $_FILES) {
     } else {
         // De haberse encontrado el usuario, devolvemos un error.
         $errores['email'] = 'El email ya está usado.';
+        echo ('hola3');
     }
 }
 ?>

@@ -1,7 +1,7 @@
 <?php 
     // Requerimos los archivos necesarios.
-    require_once 'helpers.php';
-
+    require_once 'help.php';
+    
     // Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
     if (check()) {
         redirect('_profile.php');

@@ -25,7 +25,7 @@ abstract class Validator {
             
             // Si no, nos fijamos que el largo sea menor a 4
         } elseif (strlen($usuario->getNombre()) < 4) {
-            $errores['username'] = 'El usuario debe tener 4 caracteres o más.';
+            $errores['nombre'] = 'El usuario debe tener 4 caracteres o más.';
         } 
         // En caso de existir, nos fijamos que no sea un string vacio.
         if (empty($usuario->getApellido())) {
@@ -33,7 +33,7 @@ abstract class Validator {
             
             // Si no, nos fijamos que el largo sea menor a 4
         } elseif (strlen($usuario->getApellido()) < 4) {
-            $errores['username'] = 'El usuario debe tener 4 caracteres o más.';
+            $errores['apellido'] = 'El usuario debe tener 4 caracteres o más.';
         } 
         
         // En caso de existir, nos fijamos que no sea un string vacio.
@@ -54,10 +54,7 @@ abstract class Validator {
         } elseif (strlen($usuario->getPassword()) < 8) {
             $errores['password'] = 'El password debe tener 8 caracteres o más.';
             
-            // Si no, nos fijamos que el largo sea mayor a 16
-        } //elseif (strlen($usuario->getPassword()) >= 16) {
-            //$errores['password'] = 'El password debe tener 15 caracteres o menos.';
-        //}
+        }
         
         // Validamos la foto que recibimos, nos fijamos que se haya subido bien.
         if ($_FILES && !self::validarFoto($_FILES['fotoPerfil'])) {
