@@ -1,21 +1,21 @@
 <?php 
 // Requerimos los archivos necesarios.
-require_once 'helpers.php';
-$session->mantenerSesion();
-if ($_POST) {
-    $usuario = $db->modificarDatos();
-    if ($usuario instanceof User) {
-        session_destroy();
-        session_start();
-        $_SESSION['usuario'] = $usuario;
-    } else {
-        dd('ERRORES:', $usuario);
-    }
-}
-// Si no estamos logueados, redirigimos a login.php
-if (guest()) {
-    redirect('index.php');
-}
+	//			require_once 'helpers.php';
+	//			$session->mantenerSesion();
+	//			if ($_POST) {
+	//				$usuario = $db->modificarDatos();
+	//				if ($usuario instanceof User) {
+	//					session_destroy();
+	//					session_start();
+	//					$_SESSION['usuario'] = $usuario;
+	//				} else {
+	//					dd('ERRORES:', $usuario);
+	//				}
+	//			}
+				// Si no estamos logueados, redirigimos a login.php
+	//			if (guest()) {
+	//				redirect('index.php');
+    //			}
 ?>
 
 
@@ -26,11 +26,11 @@ if (guest()) {
 <head>
 	<meta charset="UTF-8">
 	<title>Perfil | Red Social</title>
-	<link rel="stylesheet" href="../CSS/style2.css">
+	<link rel="stylesheet" href="CSS/style2.css">
 	<script type="text/javascript" src="js/views.js"></script>
 </head>
 <body>
-	<header><h1>Bienvenido <?= user()['nombre'] ?></h1>
+	<header><h1>Bienvenido </h1>
 		<nav>
 			<ul>
 				<li>

@@ -1,6 +1,6 @@
 <?PHP 
-require_once 'Vista/_header.php';
-require_once 'Vista/_main.php';
+require_once '_header.php';
+require_once '_main.php';
 
 ?>
     <section id="faq"> <!-- preguntar si esto deberia ser una gran sección con articulos adentro y que estos sean los que tengan las imagenes de fondo-->
@@ -31,6 +31,6 @@ require_once 'Vista/_main.php';
       </article>
     </section>
 <?PHP 
-require_once 'Vista/_registro.php';
-require_once 'Vista/_footer.php';
+require_once '_registro.php';
+require_once '_footer.php';
 ?>

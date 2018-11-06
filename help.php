@@ -24,6 +24,7 @@ function redirect ($url)
 // Nos devuelve true en caso de que estemos logueados, false en caso de que no lo estemos.
 function check()
 {
+
     return isset($_SESSION['usuario']);
 }
 

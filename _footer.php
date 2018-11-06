@@ -1,6 +1,6 @@
 <footer>
 
-hola
+footer 
 </footer>
 
 

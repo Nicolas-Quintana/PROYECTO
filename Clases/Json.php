@@ -39,15 +39,18 @@ class Json extends Database {
         
         // Abrimos el archivo en modo lectura.
         $archivo = file_get_contents('usuarios.json');
-        $arrayUsuarios = json_decode($archivo, true);
+        echo($archivo);
         
+        $arrayUsuarios = json_decode($archivo, true);
+        echo($arrayUsuarios);
+        exit;
         return $arrayUsuarios;
     }
     
     // Hacemos lo mismo que en la función anterior, excepto que en este caso, en vez de guardar los usuarios en un array, los vamos leyendo uno por uno hasta encontrar el correcto y lo devolvemos.
     // En caso de no encontrar nada, devuelve null.
     public function traerUsuario($email)
-    {
+    {   echo('hola edi');
         $usuarios = $this->traerUsuarios();
 
         foreach ($usuarios['usuarios'] as $usuario) {

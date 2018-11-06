@@ -8,7 +8,7 @@
     }
 
     
-    if ($_POST) {
+    if ($_POST && !($_FILES)) {
         // Verificamos si el usuario ya existe en nuestra base de datos, y de ser así, que la contraseña sea la correcta.
         $verifica = Validator::validarLogin($db, $_POST['emailLog'], $_POST['passwordLog']);
         

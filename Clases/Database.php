@@ -21,8 +21,8 @@ abstract class Database {
         $nombreFinal = uniqid() . "." . $ext;
         
         // Generamos el nuevo path completo de la imagen, usando realpath para permitirnos volver una carpeta hacia atrás.
-        $miArchivo = realpath(dirname(__FILE__) . '/..');
-        $miArchivo = $miArchivo . "/img/perfil/";
+        $miArchivo = realpath(dirname(__FILE__) . '/');
+        $miArchivo = $miArchivo . "img/perfil/";
         $miArchivo = $miArchivo . $nombreFinal;
         
         // Movemos el archivo de nuestro /tmp a la nueva locación (en este caso, la carpeta /img)

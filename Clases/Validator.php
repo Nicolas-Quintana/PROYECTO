@@ -21,19 +21,19 @@ abstract class Validator {
 
         // En caso de existir, nos fijamos que no sea un string vacio.
         if (empty($usuario->getNombre())) {
-            $errores['nombre'] = 'El usuario está vacío.';
+            $errores['nombre'] = 'El nombre está vacío.';
             
             // Si no, nos fijamos que el largo sea menor a 4
         } elseif (strlen($usuario->getNombre()) < 4) {
-            $errores['nombre'] = 'El usuario debe tener 4 caracteres o más.';
+            $errores['nombre'] = 'El nombre debe tener 4 caracteres o más.';
         } 
         // En caso de existir, nos fijamos que no sea un string vacio.
         if (empty($usuario->getApellido())) {
-            $errores['nombre'] = 'El usuario está vacío.';
+            $errores['apellido'] = 'El apellido está vacío.';
             
             // Si no, nos fijamos que el largo sea menor a 4
         } elseif (strlen($usuario->getApellido()) < 4) {
-            $errores['apellido'] = 'El usuario debe tener 4 caracteres o más.';
+            $errores['apellido'] = 'El apellido debe tener 4 caracteres o más.';
         } 
         
         // En caso de existir, nos fijamos que no sea un string vacio.

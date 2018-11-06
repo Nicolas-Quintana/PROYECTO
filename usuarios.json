@@ -1,0 +1,18 @@
+{
+    "usuarios": [
+        {
+            "nombre": "Montota",
+            "apellido": "apolaa",
+            "email": "asdasd@asdasd.asdasd",
+            "password": "$2y$10$mWnCv0p94bscIzH3I\/M66.i80VX8.qvM5Df0\/cnCZZ7H4Oic6xD.e",
+            "fotoPerfil": "5bddc8c170d11.jpg"
+        },
+        {
+            "nombre": "asdasdasd",
+            "apellido": "asdasdasd",
+            "email": "nico@digitalhouse.com",
+            "password": "$2y$10$26JA.w.WW22\/TgPkkOMWKOJdrftDT1wieTtoJEgmEIkT3\/uSDle4S",
+            "fotoPerfil": "5bddc8c170d11.jpg"
+        }
+    ]
+}

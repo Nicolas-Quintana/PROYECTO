@@ -6,16 +6,17 @@ if (check()) {
 }
 // En el caso de que recibamos datos por POST y un archivo, registramos al usuario.
 if ($_POST && $_FILES) {
+    
+    echo("antes");
     // Primero nos fijamos que el usuario no exista en la base de datos, de no existir, nos devuelve null.
     $usuarioViejo = $db->traerUsuario($_POST['email']);
-    echo ($usuarioViejo.'edi');
-    
-    // Si el usuario efectivamente no se encontró, se procede a crear el usuario.
+    echo("despues");
+
+        // Si el usuario efectivamente no se encontró, se procede a crear el usuario.
     if ($usuarioViejo === null) {
         // Creamos el usuario con los datos de $_POST
         $usuario = new User($_POST['nombre'],$_POST['apellido'], $_POST['email'], $_POST['password']);
         $usuario->setFotoPerfil($db->guardarFoto($_FILES['fotoPerfil']));
-        echo ('hola2');
         // Validamos los datos del usuario que creamos anteriormente
         $errores = Validator::validarRegister($usuario);
         
@@ -29,7 +30,6 @@ if ($_POST && $_FILES) {
     } else {
         // De haberse encontrado el usuario, devolvemos un error.
         $errores['email'] = 'El email ya está usado.';
-        echo ('hola3');
     }
 }
 ?>
@@ -49,7 +49,7 @@ if(isset($errores) && count($errores) > 0): ?>
       <article class="registre">
       
           <p>Registro</p>
-          <form  action=""  method="post" enctype="multipart/form-data">
+          <form  action=""  method="Post" enctype="multipart/form-data">
           <fieldset class= "datos">
             <label for="nombre">Nombre:</label>  
             <input type="text"  name="nombre" value="<?= (isset($errores['nombre'])) ? '' : old('nombre') ?>">
