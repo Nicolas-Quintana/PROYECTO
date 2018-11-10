@@ -8,13 +8,13 @@ class User {
     private $fotoPerfil;
 
     // Creamos el usuario, esta funcion se ejecuta cada vez que se crea un nuevo objeto.
-    public function __construct(String $nombre, String $apellido,String $email, String $password, String $fotoPerfil = null)
+    public function __construct(String $nombre, String $apellido,String $email, String $password)
     {
             $this->setNombre($nombre);
             $this->setApellido($apellido);
             $this->setEmail($email);
             $this->setPassword($password);
-            $this->setFotoPerfil($fotoPerfil);
+            $this->setFotoPerfil("");
     }
 
     //estas funciones setean y regresan los atributos de la clase a través de metodos
@@ -33,7 +33,7 @@ class User {
     }
 
     public function setApellido(String $apellido){
-        $this->nombre = $apellido;
+        $this->apellido = $apellido;
 
         return $this;
     }

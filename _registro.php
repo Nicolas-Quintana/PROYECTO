@@ -6,20 +6,21 @@ if (check()) {
 }
 // En el caso de que recibamos datos por POST y un archivo, registramos al usuario.
 if ($_POST && $_FILES) {
-    
-    echo("antes");
+
     // Primero nos fijamos que el usuario no exista en la base de datos, de no existir, nos devuelve null.
     $usuarioViejo = $db->traerUsuario($_POST['email']);
-    echo("despues");
 
         // Si el usuario efectivamente no se encontró, se procede a crear el usuario.
     if ($usuarioViejo === null) {
+
         // Creamos el usuario con los datos de $_POST
         $usuario = new User($_POST['nombre'],$_POST['apellido'], $_POST['email'], $_POST['password']);
         $usuario->setFotoPerfil($db->guardarFoto($_FILES['fotoPerfil']));
+        
         // Validamos los datos del usuario que creamos anteriormente
         $errores = Validator::validarRegister($usuario);
         
+        echo($errores);
         // Si en la validación no hubo errores, hasheamos la contraseña del usuario, lo guardamos en base de datos (json), iniciamos la sesión del mismo y redirigimos hacia la páginas de bienvenido.
         if (count($errores) === 0) {
             $usuario->setPassword(password_hash($usuario->getPassword(), PASSWORD_DEFAULT));

@@ -1,5 +1,10 @@
 <?php
+require_once 'autoloader.php';
 
+$session = new Session();
+$db = new Json('usuarios.json');
+
+// $db = new MySQL();
 // Nos permite debuggear de forma más fácil.
 function dd($param)
 {

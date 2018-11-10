@@ -29,6 +29,7 @@ abstract class Validator {
         } 
         // En caso de existir, nos fijamos que no sea un string vacio.
         if (empty($usuario->getApellido())) {
+            var_dump($usuario);
             $errores['apellido'] = 'El apellido está vacío.';
             
             // Si no, nos fijamos que el largo sea menor a 4
@@ -51,14 +52,14 @@ abstract class Validator {
             $errores['password'] = 'El password está vacío.';
             
             // Si no, nos fijamos que el largo sea menor a 8    
-        } elseif (strlen($usuario->getPassword()) < 8) {
+        } elseif (strlen($usuario->getPassword()) < 5) {
             $errores['password'] = 'El password debe tener 8 caracteres o más.';
             
         }
         
         // Validamos la foto que recibimos, nos fijamos que se haya subido bien.
         if ($_FILES && !self::validarFoto($_FILES['fotoPerfil'])) {
-            $errores['fotoPerfil'] = 'Hubo un error al subir la foto.';
+           $errores['fotoPerfil'] = 'Hubo un error al subir la foto.';
         }
         
         return $errores;

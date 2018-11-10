@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Red Social</title>
-	<link rel="stylesheet" href="../CSS/style2.css">
+	<link rel="stylesheet" href="CSS/style2.css">
 	<script type="text/javascript" src="js/views.js"></script>
 </head>
 <body>
