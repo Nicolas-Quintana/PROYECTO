@@ -4,7 +4,7 @@
     
     // Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
     if (check()) {
-        redirect('_profile.php');
+        redirect('_muro.php');
     }
 
     
@@ -18,7 +18,7 @@
             
             $session->crearSesion($usuario);
 
-            redirect('_profile.php');
+            redirect('_muro.php');
         } else {
             // De no ser así, guardamos un error en el array de errores
             $errores['emailLog'] = "Usuario o contraseña incorrecto";

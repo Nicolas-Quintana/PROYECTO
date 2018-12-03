@@ -2,7 +2,7 @@
 require_once 'help.php';
 // Redirigimos en el caso de que estemos logueados para evitar el acceso a esta página.
 if (check()) {
-    redirect('_profile.php');
+    redirect('_muro.php');
 }
 // En el caso de que recibamos datos por POST y un archivo, registramos al usuario.
 if ($_POST && $_FILES) {
@@ -26,7 +26,7 @@ if ($_POST && $_FILES) {
             $usuario->setPassword(password_hash($usuario->getPassword(), PASSWORD_DEFAULT));
             $db->guardarUsuario($usuario);
             $_SESSION['usuario'] = $usuario;
-            redirect('_profile.php');
+            redirect('_muro.php');
         }
     } else {
         // De haberse encontrado el usuario, devolvemos un error.
